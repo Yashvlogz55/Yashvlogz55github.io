@@ -9,12 +9,10 @@
       background-color: white;
       color: black;
     }
-
     .dark-mode {
       background-color: #121212;
       color: #ffffff;
     }
-
     button.toggle-btn {
       margin: 10px 0;
       padding: 10px 20px;
@@ -24,7 +22,6 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     button.toggle-btn:hover {
       background-color: #666;
     }
@@ -32,7 +29,7 @@
 </head>
 <body>
 
-  <!-- Toggle Button -->
+  <!-- Dark Mode Toggle -->
   <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
 
   <!-- Header -->
@@ -45,13 +42,16 @@
     <a href="https://www.instagram.com/yash_gharat_122" target="_blank">Click here</a>
   </p>
 
-  <!-- Latest Videos Side by Side -->
+  <!-- Subscriber Count -->
+  <h2 style="text-align: center;">📊 Live Subscriber Count</h2>
+  <div style="display: flex; justify-content: center;">
+    <iframe height="90px" width="310px" frameborder="0" src="https://socialcounts.org/youtube-live-subscriber-count/UCpxtKVX75Um43zX47g6wULg/embed" allowFullScreen></iframe>
+  </div>
+
+  <!-- Latest Videos -->
   <h2>🎥 My Latest Videos</h2>
   <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-    <!-- Video 1 -->
     <iframe width="300" height="200" src="https://www.youtube.com/embed/fcRgUisF8Qc" frameborder="0" allowfullscreen></iframe>
-    
-    <!-- Video 2 -->
     <iframe width="300" height="200" src="https://www.youtube.com/embed/F-oCvSKRC5w" frameborder="0" allowfullscreen></iframe>
   </div>
 
@@ -80,7 +80,7 @@
     </button>
   </a>
 
-  <!-- JavaScript for dark mode -->
+  <!-- JavaScript -->
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
@@ -89,4 +89,5 @@
 
 </body>
 </html>
+
 
