@@ -171,6 +171,49 @@
   }
 </script>
 
+ <!-- 🔔 Notification Popup -->
+<div id="popup" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 9999;
+  font-size: 16px;
+  animation: slideIn 0.5s ease-out;
+  max-width: 280px;
+">
+  🔔 <strong>नवीन Short:</strong><br>“ejJTyY6bXd0” Live आहे!<br><br>
+  <a href="https://youtube.com/shorts/ejJTyY6bXd0" target="_blank"
+     style="display:inline-block; margin-top:8px; padding:6px 12px; background:#E1306C; color:white; text-decoration:none; border-radius:5px; font-size:14px;">
+    📺 Watch Now
+  </a>
+</div>
+
+<!-- 🎬 Pop-up Script -->
+<script>
+  window.onload = function () {
+    const popup = document.getElementById("popup");
+    popup.style.display = "block";
+    // Hide after 6 seconds
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 6000);
+  };
+</script>
+
+<!-- 💫 Animation Effect -->
+<style>
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+ 
   
 </body>
 </html>
