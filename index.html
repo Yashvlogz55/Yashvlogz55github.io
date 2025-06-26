@@ -146,6 +146,32 @@
     }
   </script>
 
+  <h2 style="text-align:center;">🎮 Guess the Vlog Location</h2>
+<div style="max-width:400px; margin:auto; padding:20px; background:#222; color:white; border-radius:10px;">
+  <p><strong>Q:</strong> Yash ने ‘Beach Ride’ vlog कोणत्या ठिकाणी शूट केला होता?</p>
+  
+  <button onclick="checkAnswer('A')">A. Alibag</button><br><br>
+  <button onclick="checkAnswer('B')">B. Lonavala</button><br><br>
+  <button onclick="checkAnswer('C')">C. Mumbai</button><br><br>
+  <button onclick="checkAnswer('D')">D. Goa</button><br><br>
+  
+  <p id="quiz-result" style="font-weight:bold;"></p>
+</div>
+
+<script>
+  function checkAnswer(option) {
+    const result = document.getElementById("quiz-result");
+    if (option === 'A') {
+      result.style.color = "lightgreen";
+      result.innerText = "✅ Correct! हा video Alibag मध्ये होता.";
+    } else {
+      result.style.color = "red";
+      result.innerText = "❌ Chukलस! पुन्हा guess कर.";
+    }
+  }
+</script>
+
+  
 </body>
 </html>
 
