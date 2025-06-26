@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="mr">
 <head>
+  <meta charset="UTF-8">
   <title>YASH VLOGZ 55</title>
   <style>
     body {
@@ -13,6 +14,7 @@
       background-color: #121212;
       color: #ffffff;
     }
+
     button.toggle-btn {
       margin: 10px 0;
       padding: 10px 20px;
@@ -24,6 +26,57 @@
     }
     button.toggle-btn:hover {
       background-color: #666;
+    }
+
+    /* Pop-up Funny Comment Style */
+    #funny-comment-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #1e1e1e;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 25px;
+      font-size: 15px;
+      box-shadow: 0 0 15px #00000088;
+      z-index: 1000;
+      max-width: 90%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: popfade 7s ease-in-out forwards;
+    }
+
+    @keyframes popfade {
+      0% { opacity: 0; transform: translateY(30px); }
+      10% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(30px); }
+    }
+
+    #close-btn {
+      background: none;
+      border: none;
+      color: #f44336;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #change-btn {
+      margin-top: 10px;
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 999;
     }
   </style>
 </head>
@@ -80,14 +133,59 @@
     </button>
   </a>
 
+  <!-- Funny Pop-up Comments -->
+  <div id="funny-comment-popup">
+    <span id="comment-text"></span>
+    <button id="close-btn" title="बंद करा">×</button>
+  </div>
+
+  <button id="change-btn">😂 दुसरं comment दाखवा</button>
+
   <!-- JavaScript -->
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
     }
+
+    const comments = [
+      "Yash Bhau चं video बघून माझा mobile चार्ज झाला! 🔋",
+      "तुमचं intro music ऐकून माझा कुत्रा डान्स करतोय! 🐶🎶",
+      "तुमच्या vlog मध्ये एवढा swag आहे की नेटवर्क पण घाबरतं! 📶😎",
+      "Yash Vlogz पाहून आमचं TV resign देणार आहे! 📺😳",
+      "तुमचं video बघताना popcorn विसरलो आणि charger खाल्ला! 🍿🔌",
+      "Google Maps नी clap दिलं तुमच्या लोकेशनला! 🗺️👏",
+      "तुमच्या आवाजात Alexa पण शांत होतं! 🎤🤖",
+      "Netflix म्हणतंय – 'पाहायचं असेल तर YASH VLOGZ बघ!' 📺🔥",
+      "तुमचं video बघून माझ्या घरचं WiFi improve झालं! 💡📡"
+    ];
+
+    const popup = document.getElementById("funny-comment-popup");
+    const commentText = document.getElementById("comment-text");
+    const closeBtn = document.getElementById("close-btn");
+    const changeBtn = document.getElementById("change-btn");
+
+    function showRandomComment() {
+      const random = Math.floor(Math.random() * comments.length);
+      commentText.innerText = "🤣 \"" + comments[random] + "\"";
+      popup.style.animation = "none";
+      void popup.offsetWidth;
+      popup.style.animation = "popfade 7s ease-in-out forwards";
+    }
+
+    showRandomComment(); // Show on load
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    changeBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+      showRandomComment();
+    });
   </script>
 
 </body>
 </html>
+
 
 
